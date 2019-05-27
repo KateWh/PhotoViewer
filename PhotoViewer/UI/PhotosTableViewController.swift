@@ -68,7 +68,7 @@ class PhotosTableViewController: UITableViewController, UISearchControllerDelega
     
    
     // MARK: - Table view data source
-    
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
@@ -119,9 +119,10 @@ class PhotosTableViewController: UITableViewController, UISearchControllerDelega
 
     // Pagination cells.
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if (tableView.contentOffset.y + tableView.frame.size.height) > tableView.contentSize.height, paginationCount < 10 {
+        if (tableView.contentOffset.y + tableView.frame.size.height) > tableView.contentSize.height, paginationCount < 10, scrollView.isDragging {
             // To get the pages.
             paginationCount += 1
+
             photosViewModel.getPhotos(onPage: paginationCount){ (error) in
                 guard error == nil else {
                     return

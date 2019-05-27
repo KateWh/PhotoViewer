@@ -25,49 +25,49 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ERg-Aq-qrv">
-                                            <rect key="frame" x="124" y="0.0" width="126" height="200"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="ERg-Aq-qrv" secondAttribute="height" multiplier="123:193" constant="-1.4611398963730693" id="u2k-da-SZb"/>
-                                            </constraints>
-                                        </imageView>
                                         <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FXb-cs-goh">
-                                            <rect key="frame" x="0.0" y="0.0" width="125" height="200"/>
+                                            <rect key="frame" x="125" y="-1" width="125" height="200"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="FXb-cs-goh" secondAttribute="height" multiplier="123:193" constant="-2.4611398963730693" id="5rF-dz-fcC"/>
+                                                <constraint firstAttribute="height" constant="200" id="BuT-UE-R3O"/>
                                             </constraints>
                                         </imageView>
                                         <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v1q-98-53r">
                                             <rect key="frame" x="250" y="0.0" width="125" height="200"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="v1q-98-53r" secondAttribute="height" multiplier="123:193" constant="-2.4611398963730693" id="I48-Zz-f9L"/>
+                                                <constraint firstAttribute="height" constant="200" id="J7J-oa-xzr"/>
+                                                <constraint firstAttribute="width" constant="125" id="OvU-cw-WFw"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ERg-Aq-qrv">
+                                            <rect key="frame" x="0.0" y="-1" width="126" height="200"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="200" id="3Ov-50-WGP"/>
+                                                <constraint firstAttribute="width" constant="126" id="Uvx-zC-ZvE"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" red="1" green="0.90676358430000004" blue="0.91331562119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="v1q-98-53r" secondAttribute="bottom" constant="-0.5" id="B1G-5e-zty"/>
-                                        <constraint firstItem="ERg-Aq-qrv" firstAttribute="width" secondItem="v1q-98-53r" secondAttribute="width" constant="1" id="QyM-Fm-f4k"/>
-                                        <constraint firstItem="FXb-cs-goh" firstAttribute="height" secondItem="ERg-Aq-qrv" secondAttribute="height" id="Zz4-FD-E7o"/>
-                                        <constraint firstItem="v1q-98-53r" firstAttribute="height" secondItem="ERg-Aq-qrv" secondAttribute="height" id="c1o-rA-gQy"/>
-                                        <constraint firstItem="ERg-Aq-qrv" firstAttribute="leading" secondItem="FXb-cs-goh" secondAttribute="trailing" constant="-1" id="esx-kF-I92"/>
-                                        <constraint firstItem="v1q-98-53r" firstAttribute="leading" secondItem="ERg-Aq-qrv" secondAttribute="trailing" id="g6L-JX-zkx"/>
-                                        <constraint firstItem="FXb-cs-goh" firstAttribute="width" secondItem="ERg-Aq-qrv" secondAttribute="width" constant="-1" id="g9B-xi-2iu"/>
+                                        <constraint firstItem="FXb-cs-goh" firstAttribute="leading" secondItem="ERg-Aq-qrv" secondAttribute="trailing" constant="-1" id="HAV-zI-JEX"/>
+                                        <constraint firstItem="FXb-cs-goh" firstAttribute="width" secondItem="ERg-Aq-qrv" secondAttribute="width" constant="-1" id="ZZJ-Va-TPn"/>
+                                        <constraint firstItem="v1q-98-53r" firstAttribute="leading" secondItem="FXb-cs-goh" secondAttribute="trailing" id="dUo-gs-1Ui"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <constraints>
+                                    <constraint firstItem="ERg-Aq-qrv" firstAttribute="leading" secondItem="1Cf-xx-nHB" secondAttribute="leading" id="6QK-ds-B9U"/>
                                     <constraint firstAttribute="trailing" secondItem="v1q-98-53r" secondAttribute="trailing" id="7kR-xX-grY"/>
-                                    <constraint firstItem="ERg-Aq-qrv" firstAttribute="top" secondItem="1Cf-xx-nHB" secondAttribute="top" id="BU3-yb-XAC"/>
-                                    <constraint firstItem="FXb-cs-goh" firstAttribute="top" secondItem="1Cf-xx-nHB" secondAttribute="top" id="KIk-er-6WT"/>
-                                    <constraint firstAttribute="bottom" secondItem="FXb-cs-goh" secondAttribute="bottom" id="Vxp-22-pm9"/>
-                                    <constraint firstItem="FXb-cs-goh" firstAttribute="leading" secondItem="1Cf-xx-nHB" secondAttribute="leading" id="XoE-jS-c0g"/>
+                                    <constraint firstItem="FXb-cs-goh" firstAttribute="top" secondItem="1Cf-xx-nHB" secondAttribute="top" constant="-1" id="KIk-er-6WT"/>
+                                    <constraint firstAttribute="bottom" secondItem="FXb-cs-goh" secondAttribute="bottom" constant="1" id="Vxp-22-pm9"/>
+                                    <constraint firstItem="ERg-Aq-qrv" firstAttribute="top" secondItem="1Cf-xx-nHB" secondAttribute="top" constant="-1" id="gYh-Rj-0JL"/>
+                                    <constraint firstAttribute="bottom" secondItem="ERg-Aq-qrv" secondAttribute="bottom" constant="1" id="ole-Dc-cfK"/>
                                     <constraint firstAttribute="bottom" secondItem="v1q-98-53r" secondAttribute="bottom" id="uok-S3-mJh"/>
                                     <constraint firstItem="v1q-98-53r" firstAttribute="top" secondItem="1Cf-xx-nHB" secondAttribute="top" id="v3T-Db-65r"/>
                                 </constraints>
                                 <connections>
-                                    <outletCollection property="imageViewCollection" destination="FXb-cs-goh" collectionClass="NSMutableArray" id="ZQW-Y7-Zrf"/>
-                                    <outletCollection property="imageViewCollection" destination="ERg-Aq-qrv" collectionClass="NSMutableArray" id="gKN-It-Xxs"/>
-                                    <outletCollection property="imageViewCollection" destination="v1q-98-53r" collectionClass="NSMutableArray" id="zg5-VT-Bqb"/>
+                                    <outletCollection property="imageViewCollection" destination="ERg-Aq-qrv" collectionClass="NSMutableArray" id="vUL-F7-Tkh"/>
+                                    <outletCollection property="imageViewCollection" destination="FXb-cs-goh" collectionClass="NSMutableArray" id="bZ9-LI-lvw"/>
+                                    <outletCollection property="imageViewCollection" destination="v1q-98-53r" collectionClass="NSMutableArray" id="mVh-Ev-VEy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

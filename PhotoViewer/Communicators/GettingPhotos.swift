@@ -12,8 +12,7 @@ import NetworkFramework
 struct GettingPhotos {
     
     static func getPhotos(onPage page: Int, completionHandler: @escaping (Result<[GetPhoto]>) -> Void){
-        // TODO: Create Error for alert handler.
-        
+
         // Call URLSession.
         URLSession.shared.dataTask(with: UnsplashRouter.getPhotos(onPage: page).getURL()) { (data, response, error) in
             // Check the presence of data.

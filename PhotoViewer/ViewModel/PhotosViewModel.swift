@@ -13,6 +13,7 @@ class PhotosViewModel {
     // Data is prepared for display.
     var photosReceived = [[String]]()
     var photosFound = [String]()
+    var lastSearchingResults = [String]()
     
     func getPhotos(onPage page: Int, complitionHandler: @escaping (Error?) -> Void) {
         GettingPhotos.getPhotos(onPage: page) { (photos) in
@@ -46,6 +47,7 @@ class PhotosViewModel {
             case .success(let photo):
                 // Save data in view model and return no error.
                 self.photosFound.append(photo.results[0].urls.small)
+                self.lastSearchingResults = [photo.results[0].urls.small]
                 complitionHandler(nil)
             case .failure(let error):
                 // Return error.

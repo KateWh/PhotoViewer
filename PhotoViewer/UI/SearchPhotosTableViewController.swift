@@ -13,6 +13,7 @@ class SearchPhotosTableViewController: UITableViewController, UISearchResultsUpd
     // Create viewModel instance.
     let photosViewModel = PhotosViewModel()
 
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -62,24 +63,26 @@ class SearchPhotosTableViewController: UITableViewController, UISearchResultsUpd
     // Updates search after the introduction of characters.
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text, searchController.searchBar.text?.count ?? 0 > 3 else { return }
-        photosViewModel.searchPhoto(withTitle: searchText ) { (error) in
-            switch error {
-            case .none:
-                // Reload tableView.
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
+        
+        if searchText.count > 3 {
+            photosViewModel.searchPhoto(withTitle: searchText ) { (error) in
+                switch error {
+                case .none:
+                    // Reload tableView.
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                case .some(_):
+                    break
+                    // TODO: Create alert.
                 }
-            case .some(_):
-                break
-                // TODO: Create alert.
             }
-            
         }
     }
 
     // Updates search after the tap of enter.
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-       
+   
     }
   
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -88,11 +91,20 @@ class SearchPhotosTableViewController: UITableViewController, UISearchResultsUpd
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         return true
     }
+ 
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return (0 ..< photosViewModel.lastSearchingResults.count).contains(indexPath.row) ? true : false
+    }
     
     // Delete seach array when close seach.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        guard editingStyle == .delete, indexPath.row == 0 else { return }
-       photosViewModel.photosFound.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .automatic)
+        if editingStyle == .delete {
+            //photosViewModel.photosFound.remove(at: indexPath.row)
+            photosViewModel.photosFound.removeLast()
+            photosViewModel.lastSearchingResults.removeAll()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.reloadData()
+        }
     }
+ 
 }

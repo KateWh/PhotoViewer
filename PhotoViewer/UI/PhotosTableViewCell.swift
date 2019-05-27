@@ -19,9 +19,10 @@ class PhotosTableViewCell: UITableViewCell {
             guard let url = URL(string: urlString) else { return }
             // Download and set picture.
             NetworkFramework.PhotoProvider.downloadImage(url: url) { image in
-                self.imageViewCollection[index].image = image
+                DispatchQueue.main.async {
+                    self.imageViewCollection[index].image = image
+                }
             }
         }
     }
-
 }
